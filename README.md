@@ -18,4 +18,4 @@ Here we have also made reusabilty of Employee Component where it is used in the 
 
 We have also made use of font awesome script for icons and other stuff.
 
-Many more features are on the same stay connected!!!!
+Many more features are on the way stay connected!!!!
