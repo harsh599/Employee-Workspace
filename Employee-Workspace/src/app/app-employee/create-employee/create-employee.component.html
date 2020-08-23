@@ -1,0 +1,58 @@
+<html>
+
+<body>
+  <mat-card>
+    <mat-card-content>
+        <form [formGroup] = "employeeForm" #formDirective="ngForm"
+                          (ngSubmit)="submitForm(formDirective)">
+          <div class="container">
+            <h1><span *ngIf = "!(data && data.value)">Add </span><span *ngIf = "data && data.value">Update </span> an Employee.</h1>
+            <p *ngIf = "!(data && data.value)">Please fill in this form to create an account.</p>
+            <hr>
+            <mat-form-field class="mat-input">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="First Name" value autocomplete="given-name" formControlName="name"><!-- formControlName="firstName"-->
+            </mat-form-field>
+
+            <mat-form-field class="mat-input">
+              <mat-label>E-mail</mat-label>
+              <input matInput placeholder="First Name" value autocomplete="given-name" formControlName="email"><!-- formControlName="firstName"-->
+            </mat-form-field>
+
+            <mat-form-field class="mat-input">
+              <mat-label>Project</mat-label>
+              <input matInput placeholder="First Name" value autocomplete="given-name" formControlName="project"><!-- formControlName="firstName"-->
+            </mat-form-field>
+
+              <mat-label>Gender</mat-label>
+              <mat-radio-group aria-label="Select an option"  formControlName="gender">
+              <mat-radio-button value="m">Male</mat-radio-button>
+              <mat-radio-button value="f">Female</mat-radio-button>
+              <mat-radio-button value="o">Other</mat-radio-button>
+            </mat-radio-group>
+
+            <!-- <mat-form-field class="mat-input">
+              <mat-label>State</mat-label>
+              <input matInput placeholder="First Name" value autocomplete="given-name">
+            </mat-form-field>
+
+            <mat-form-field class="mat-input">
+              <mat-label>City</mat-label>
+              <input matInput placeholder="First Name" value autocomplete="given-name">
+            </mat-form-field> -->
+            <hr>
+            <!-- <p>By creating an account you agree to our <a href="javascript.void(0)">Terms & Privacy</a>.</p> -->
+
+            <button mat-raised-button class="registerbtn" [disabled] = "employeeForm.invalid || disableSubmit"><span *ngIf = "!(data && data.value)">Add </span><span *ngIf = "data && data.value">Update </span>Employee</button>
+          </div>
+
+          <!-- <div class="container signin">
+            <p>Already have an account? <a href="#">Sign in</a>.</p>
+          </div> -->
+        </form>
+        <button mat-raised-button color="warn" (click) = "onClose()" *ngIf = "data && data.value">Close</button>
+    </mat-card-content>
+  </mat-card>
+</body>
+
+</html>
